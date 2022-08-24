@@ -3,12 +3,25 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/state_manager.dart';
 
 class LoginController extends GetxController {
-  var cpf = 0.obs;
-  var password = 0.obs;
+  bool showPassword = true;
+  String cpf = "";
+  String password = "";
 
-  doLogin() {}
+  setPassword() {
+    showPassword = !showPassword;
+    update();
+  }
 
-  opneHome(){
+  doLogin() {
+
+  }
+
+  openHome() {
     Modular.to.navigate('/home');
+  }
+
+  openResetPassword(){
+
+
   }
 }

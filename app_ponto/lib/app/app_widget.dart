@@ -4,11 +4,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
 
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'App Ponto',
       theme: AppTheme().themeData(),
+      key: navigatorKey,
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
     ); //added this
