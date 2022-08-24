@@ -21,7 +21,6 @@ class LoginController extends GetxController {
   }
 
   openResetPassword(){
-
-
+    openHome();
   }
 }

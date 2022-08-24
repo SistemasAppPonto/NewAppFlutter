@@ -14,6 +14,6 @@ class LoginModule extends  Module{
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute('/', child: (_, args) => LoginPage()),
+    ChildRoute('/', child: (_, args) => const LoginPage(),  transition: TransitionType.leftToRight),
   ];
 }

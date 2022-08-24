@@ -14,7 +14,7 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute('/', module: SplashScreenModule()),
+        ModuleRoute(Modular.initialRoute, module: SplashScreenModule()),
         ModuleRoute('/login', module: LoginModule()),
         ModuleRoute('/home', module: HomeModule()),
       ];
