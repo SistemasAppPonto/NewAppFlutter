@@ -31,37 +31,21 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(child: Container()),
                   const SizedBox(height: 40),
                   Text(
-                    "App Ponto",
+                    "Login",
                     style: TextStyle(
                         color: AppPalette.branco,
                         fontSize: 28,
                         fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 20),
-                  Text(
-                    "Faça login em sua sua conta usando \ncpf e senha.",
-                    style: TextStyle(color: AppPalette.white70),
-                  ),
+                  // Text(
+                  //   "Faça login em sua sua conta usando \ncpf e senha.",
+                  //   style: TextStyle(color: AppPalette.white70),
+                  // ),
                   const SizedBox(height: 20),
                   _form(_, context),
                   Expanded(child: Container()),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Esqueceu sua senha?",
-                        style: TextStyle(
-                            color: AppPalette.white70,
-                            fontStyle: FontStyle.italic),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Recuperar senha",
-                        ),
-                      ),
-                    ],
-                  )
+                  _resetPassword()
                 ],
               ),
             ),
@@ -69,9 +53,29 @@ class _LoginPageState extends State<LoginPage> {
         });
   }
 
+  Row _resetPassword() {
+    return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Esqueceu sua senha?",
+                      style: TextStyle(
+                          color: AppPalette.white70,
+                          fontStyle: FontStyle.italic),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Recuperar senha",
+                      ),
+                    ),
+                  ],
+                );
+  }
+
   SizedBox _form(LoginController _, BuildContext context) {
     return SizedBox(
-      height: 210,
+      height: 220,
       child: Stack(
         children: [
           Positioned(
@@ -84,8 +88,8 @@ class _LoginPageState extends State<LoginPage> {
               decoration: BoxDecoration(
                 color: AppPalette.branco,
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(12),
-                  bottomLeft: Radius.circular(12),
+                  topLeft: Radius.circular(4),
+                  bottomLeft: Radius.circular(4),
                 ),
               ),
               child: Column(
@@ -93,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                   Form(
                     child: Column(
                       children: [
+                        const SizedBox(height: 8),
                         TextFormField(
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
@@ -100,12 +105,13 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
-                              label: Text("cpf"), hintText: "000.000.000-00"),
+                              label: Text("Cpf"), hintText: "000.000.000-00"),
                         ),
+                        const SizedBox(height: 8),
                         TextFormField(
                           obscureText: _.showPassword,
                           decoration: InputDecoration(
-                            label: const Text("senha"),
+                            label: const Text("Senha"),
                             suffixIcon: IconButton(
                               icon: Icon(_.showPassword
                                   ? Icons.visibility_off_outlined
@@ -130,14 +136,14 @@ class _LoginPageState extends State<LoginPage> {
                 height: 45,
                 width: MediaQuery.of(context).size.width / 2.5,
                 child: ElevatedButton(
-                  child: const Text("Entrar"),
+                  child: Text("Entrar"),
+                  
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(4),
                     ),
                   ),
                   onPressed: _.openResetPassword,
-                
                 ),
               ),
             ),
