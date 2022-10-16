@@ -13,7 +13,7 @@ class AppPalette {
   static final destaqueColor = Colors.cyan[300];
 
 
-
+  static final black38 =Colors.black38;
   static final branco = Colors.white;
   static final white70 = Colors.white70;
   static final vermelho = Colors.red;
