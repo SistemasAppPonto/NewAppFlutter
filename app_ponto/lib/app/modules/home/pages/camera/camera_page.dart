@@ -64,7 +64,7 @@ class _CameraPageState extends State<CameraPage> {
                       print(e);
                     }
                   },
-                  child: const Text("Tirar Photo")),
+                  child: const Text("Tirar Foto")),
    
             ],
           ),
