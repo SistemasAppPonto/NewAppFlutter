@@ -1,4 +1,5 @@
 import 'package:app_ponto/app/shared/utils/AppPalette.dart';
+import 'package:app_ponto/app/modules/home/components/person_details.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -27,7 +28,7 @@ class _DashboardPageState extends State<DashboardPage>
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        _detailsPerson(),
+        const PersonDetails(),
         Card(
           child: Column(
             children: [
@@ -99,41 +100,6 @@ class _DashboardPageState extends State<DashboardPage>
           formatButtonVisible: false,
           formatButtonShowsNext: false,
           titleCentered: true),
-    );
-  }
-
-  Container _detailsPerson() {
-    return Container(
-      margin: const EdgeInsets.only(top: 16, bottom: 8),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 8, bottom: 8),
-          child: ListTile(
-            leading: const SizedBox(
-              height: 50,
-              width: 50,
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80'),
-              ),
-            ),
-            title: const Text("Maria da Silva"),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text("maria_s21@gmail.com"),
-                Text("Escala: XXXX"),
-              ],
-            ),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.arrow_forward_ios_rounded,
-              ),
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

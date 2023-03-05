@@ -3,6 +3,7 @@ import 'package:app_ponto/app/modules/home/pages/profile/profile_page.dart';
 import 'package:app_ponto/app/modules/home/pages/records/records_page.dart';
 import 'package:app_ponto/app/modules/home/pages/scales/scales_page.dart';
 import 'package:app_ponto/app/shared/utils/AppPalette.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,10 +37,14 @@ class _HomePageState extends State<HomePage> {
           _titlesPages.elementAt(_selectedPage),
         ),
         centerTitle: true,
-        backgroundColor: AppPalette.primaria,
       ),
-      body: _pages.elementAt(
-        _selectedPage,
+      body: LayoutBuilder(
+        builder: (_, constraints) => Container(
+          padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .03),
+          child: _pages.elementAt(
+            _selectedPage,
+          ),
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -63,7 +68,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppPalette.primaria,
-        onPressed: () {},
+        onPressed: () {
+          Modular.to.pushNamed('/home/point_register');
+        },
         child: const Icon(Icons.fingerprint),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

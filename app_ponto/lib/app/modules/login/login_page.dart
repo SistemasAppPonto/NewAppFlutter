@@ -1,4 +1,3 @@
-import 'package:app_ponto/app/app_widget.dart';
 import 'package:app_ponto/app/modules/login/login_controller.dart';
 import 'package:app_ponto/app/shared/utils/AppPalette.dart';
 import 'package:flutter/material.dart';
