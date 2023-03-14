@@ -5,7 +5,7 @@ class AppPalette {
   static final primaria = Colors.indigo[800];
   static final secundaria = Colors.indigoAccent;
 
-
+  static final beckground = Color(0XFFF4F4F4);
 //  static final inativeColor= Color(0xFF99DDFF);
   static final inativeColor = Colors.lightBlueAccent[100];
 
@@ -14,7 +14,9 @@ class AppPalette {
 
 
   static final black38 =Colors.black38;
+  static final black87 =Colors.black87;
   static final branco = Colors.white;
+  static final white = Colors.white;
   static final white70 = Colors.white70;
   static final vermelho = Colors.red;
   static final verde= Colors.green;
