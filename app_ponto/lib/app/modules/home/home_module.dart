@@ -9,14 +9,14 @@ class HomeModule extends Module {
   List<Module> get imports => const [];
 
   @override
-  List<Bind> get binds => [
-        Bind.factory((i) => HomeController()),
-      ];
+  void binds(i){
+    i.add(HomeController.new);
+  }
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute('/', child: (_, args) => HomePage()),
-        ChildRoute('/point_register', child: (_, args) => PointRegisterPage()),
-        ChildRoute('/camera', child: (_, args) => CameraPage()),
-      ];
+  void routes(r){
+    r.child('/', child: (context) => HomePage(),);
+    r.child('/point_register', child: (context) => PointRegisterPage(),);
+    r.child('/camera', child: (context) => CameraPage(),);
+  } 
 }

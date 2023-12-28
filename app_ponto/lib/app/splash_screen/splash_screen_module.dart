@@ -7,12 +7,12 @@ class SplashScreenModule extends Module {
   List<Module> get imports => const [];
 
   @override
-  List<Bind> get binds => [
-        Bind.factory((i) => SplashScreenController()),
-      ];
+  void binds(i){
+        i.add(SplashScreenController.new);
+      }
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute('/', child: (_, args) => SplashScreenPage()),
-      ];
+  void routes(r){
+        r.child('/', child: (context) => SplashScreenPage());
+      }
 }

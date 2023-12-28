@@ -8,12 +8,12 @@ class LoginModule extends  Module{
   List<Module> get imports => const [];
 
   @override
-  List<Bind> get binds => [
-    Bind.factory((i) => LoginController()),
-  ];
+  void binds(i) {
+    i.add(LoginController.new);
+  }
 
   @override
-  List<ModularRoute> get routes => [
-    ChildRoute('/', child: (_, args) => const LoginPage(),  transition: TransitionType.leftToRight),
-  ];
+  void routes(r){
+   r.child('/', child: (context) => const LoginPage(),  transition: TransitionType.leftToRight);
+  }
 }

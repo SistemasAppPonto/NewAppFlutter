@@ -1,0 +1,16 @@
+# Flutter/Dart artifacts
+.dart_tool/
+.pub-cache/
+/build/
+.idea/
+.vscode/
+.iml
+.android/
+*.iml
+
+# Flutter/Dart specific files
+*.flutter-plugins
+*.flutter-plugins-dependencies
+.vscode/
+.vscode/*
+!.vscode/settings.json

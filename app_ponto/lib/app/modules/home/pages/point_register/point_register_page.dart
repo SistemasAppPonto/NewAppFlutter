@@ -192,7 +192,7 @@ class _PointRegisterPageState extends State<PointRegisterPage> {
       elevation: 0,
       child: FlutterMap(
         options: MapOptions(
-            absorbPanEventsOnScrollables: true, // important to allow panning
+            // absorbPanEventsOnScrollables: true, // important to allow panning
             center: LatLng(-8.053705, -34.887194),
             zoom: _zoom),
         mapController: mapController,
